@@ -74,6 +74,9 @@ const HeaderSearch = ({ value, onChangeText, isActive }: HeaderSearchType) => {
           </Animated.View>
           <AnimatedTextInput
             value={value}
+            cursorColor={"rgb(168,199,250)"}
+            selectionColor={"rgba(168,199,250,0.3)"}
+            selectionHandleColor={"rgb(168,199,250)"}
             onChangeText={onChangeText}
             onFocus={() => {
               isActive.value = 1;

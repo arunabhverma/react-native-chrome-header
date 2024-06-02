@@ -15,7 +15,7 @@ const Main = () => {
   const animatedContainer = useAnimatedStyle(() => {
     return {
       backgroundColor: withTiming(
-        isActive.value ? "rgba(0,0,0, 0.5)" : "tranparent"
+        isActive.value ? "rgba(0,0,0,0.5)" : "transparent"
       ),
     };
   });
@@ -26,11 +26,7 @@ const Main = () => {
       <View style={styles.mainContainer}>
         <Animated.View
           pointerEvents={"none"}
-          style={[
-            StyleSheet.absoluteFillObject,
-            { zIndex: 1 },
-            animatedContainer,
-          ]}
+          style={[styles.overlay, animatedContainer]}
         />
         <ScrollView
           style={styles.container}
@@ -76,6 +72,10 @@ const styles = StyleSheet.create({
     color: "rgb(242,242,242)",
     fontWeight: "300",
     marginTop: 20,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 1,
   },
   subHeading: {
     fontSize: 18,
